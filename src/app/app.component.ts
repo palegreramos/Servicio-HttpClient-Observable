@@ -9,21 +9,21 @@ import { Observable } from 'rxjs';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-public items:Array<Todos>;
-// public items$: Observable<Todos[]>;
+//public items:Array<Todos>;
+ public items$: Observable<Todos[]>;
 
   constructor (private servicioService: ServicioService) {}
 
   ngOnInit() {
-     this.servicioService.getData()
-        .subscribe(item => 
-          this.items=item);
-    //  this.items$ = this.servicioService.getData();
+    //  this.servicioService.getData()
+    //     .subscribe(item => 
+    //       this.items=item);
+     this.items$ = this.servicioService.getData();
   }
 
   cambiaEstado(item) {
   item.completed=!item.completed;
-  console.log(this.items);
+  // console.log(this.items);
   }
 
   
