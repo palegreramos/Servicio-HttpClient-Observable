@@ -1,0 +1,23 @@
+<main class="container">
+<h3>Pincha en cada elemento para cambiar estado a completado/no completado</h3>
+<table class="table table-success">
+ 
+  <thead><tr><th>USERID</th>
+    <th>ID</th>
+    <th>TITLE</th>
+    <th>COMPLETED</th>
+  </tr></thead>
+  <tbody>
+  <tr *ngFor="let item of items" (click)="cambiaEstado(item)">
+<!-- <tr *ngFor="let item of items$ | async" (click)="cambiaEstado(item)"> -->
+<td>{{item.userId}}</td>
+<td>{{item.id}}</td>
+<td>{{item.title}}</td>
+<td [ngClass]="{'nocompletado' : !item.completed}">{{item.completed}}</td>
+</tr>
+</tbody>
+</table> 
+<p>
+  {{items | json}}
+</p>
+</main>
