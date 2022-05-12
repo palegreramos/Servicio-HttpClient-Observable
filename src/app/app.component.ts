@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import {Todos} from './todos';
 import { ServicioService } from './servicio.service';
-import { Observable } from 'rxjs';
+import { Observable} from 'rxjs';
 
 @Component({
   selector: 'my-app',
@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class AppComponent  {
 //public items:Array<Todos>;
  public items$: Observable<Todos[]>;
+
 
   constructor (private servicioService: ServicioService) {}
 
