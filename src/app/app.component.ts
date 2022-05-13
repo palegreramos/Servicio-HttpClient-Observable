@@ -2,7 +2,6 @@ import { Component} from '@angular/core';
 import {Todos} from './todos';
 import { ServicioService } from './servicio.service';
 import { Observable} from 'rxjs';
-import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'my-app',
