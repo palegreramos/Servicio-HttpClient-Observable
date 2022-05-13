@@ -9,7 +9,7 @@ import { Observable} from 'rxjs';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-public items:Array<Todos>;
+public items=new Array<Todos>();
  //public items$: Observable<Todos[]>;
 
 
@@ -18,14 +18,18 @@ public items:Array<Todos>;
   ngOnInit() {
       this.servicioService.getData()
          .subscribe((item:Todos[]) => 
-           this.items=item);
+           this.items=item.map((i)=>{
+             let user=new Todos(i.userId,i.id,i.title,i.completed);
+             return user;
+           }));
      //this.items$ = this.servicioService.getData();
  
   }
 
   cambiaEstado(item:Todos) {
-  item.completed=!item.completed;
+  item.cambia();
   console.log(item)
+  console.log(item.mays)
   }
 
   
