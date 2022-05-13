@@ -4,3 +4,6 @@ p {
 .nocompletado {
   background-color: red;
 }
+.falta {
+  color: red;
+}

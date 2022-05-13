@@ -14,7 +14,7 @@
 <td>{{item.userId}}</td>
 <td>{{item.id}}</td>
 <td *ngIf="item.completed; else elseBlock">{{item.mays}}</td>
-<ng-template #elseBlock><td>{{item.mins}}</td></ng-template>
+<ng-template #elseBlock><td [ngClass]="{'falta' : !item.completed}">{{item.mins}}</td></ng-template>
 <td [ngClass]="{'nocompletado' : !item.completed}">{{item.completed}}</td>
 </tr>
 </tbody>
