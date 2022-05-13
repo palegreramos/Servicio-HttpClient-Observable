@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class ServicioService {
   
   constructor(private http: HttpClient) { }
+  
   getData(): Observable<Todos[]> {
     return this.http.get<Todos[]>('https://jsonplaceholder.typicode.com/todos');
 }
