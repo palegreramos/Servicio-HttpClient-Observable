@@ -23,8 +23,9 @@ public items:Array<Todos>;
  
   }
 
-  cambiaEstado(item) {
+  cambiaEstado(item:Todos) {
   item.completed=!item.completed;
+  console.log(item)
   }
 
   
