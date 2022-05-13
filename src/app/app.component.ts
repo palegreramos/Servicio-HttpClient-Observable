@@ -17,7 +17,7 @@ public items:Array<Todos>;
 
   ngOnInit() {
       this.servicioService.getData()
-         .subscribe(item => 
+         .subscribe((item:Todos[]) => 
            this.items=item);
      //this.items$ = this.servicioService.getData();
   }
