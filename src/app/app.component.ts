@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import {Todos} from './todos';
 import { ServicioService } from './servicio.service';
 import { Observable} from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'my-app',
@@ -20,6 +21,7 @@ public items:Array<Todos>;
          .subscribe((item:Todos[]) => 
            this.items=item);
      //this.items$ = this.servicioService.getData();
+ 
   }
 
   cambiaEstado(item) {
