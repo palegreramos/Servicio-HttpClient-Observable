@@ -5,8 +5,8 @@ export interface Todos {
   completed: boolean;
 }
 
-export class Todos {
+// export class Todos {
 
-  constructor(public userId:number,public id:number, public title:string, public completed: boolean){}
+//   constructor(public userId:number,public id:number, public title:string, public completed: boolean){}
 
-}
+// }
