@@ -29,8 +29,9 @@ export class AppComponent  {
 
   cambiaEstado(item:Todos) {
   // item.cambia();
-  console.log(item)
+ 
   item.completed=!item.completed;
+  console.log(item)
   // console.log(item.mays)
  }
 

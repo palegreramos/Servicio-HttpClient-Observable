@@ -1,6 +1,6 @@
 <main class="container">
 
-<!-- <h3>Pincha en cada elemento para cambiar estado a completado/no completado</h3> -->
+<h3>Pincha en cada elemento para cambiar estado a completado/no completado</h3>
 <table class="table table-success">
  
   <thead><tr><th>USERID</th>
@@ -14,14 +14,10 @@
 <td>{{item.userId}}</td>
 <td>{{item.id}}</td>
 <td>{{item.title}}</td>
- <td *ngIf="item.completed; else elseBlock">{{item.mays}}</td>
-<ng-template #elseBlock><td [ngClass]="{'falta' : !item.completed}">{{item.mins}}</td></ng-template>
+ <!-- <td *ngIf="item.completed; else elseBlock">{{item.mays}}</td>
+<ng-template #elseBlock><td [ngClass]="{'falta' : !item.completed}">{{item.mins}}</td></ng-template> -->
 <td [ngClass]="{'nocompletado' : !item.completed}">{{item.completed}}</td>
 </tr> 
 </tbody>
 </table> 
-<p>
-  <!-- {{items | json}} -->
-  {{items$  | async | json}}
-</p>
 </main>
