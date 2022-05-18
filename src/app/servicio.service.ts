@@ -4,7 +4,9 @@ import {Todos} from './todos';
 import { Observable } from 'rxjs';
 
 
-@Injectable()
+@Injectable({
+  ​ 	  providedIn: ​'root'​
+  ​ 	})
 export class ServicioService {
   
   constructor(private http: HttpClient) { }
