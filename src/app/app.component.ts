@@ -27,11 +27,12 @@ export class AppComponent  {
  
   }
 
-  // cambiaEstado(item:Todos) {
+  cambiaEstado(item:Todos) {
   // item.cambia();
-  // console.log(item)
+  console.log(item)
+  item.completed=!item.completed;
   // console.log(item.mays)
-  // }
+ }
 
   
 }
