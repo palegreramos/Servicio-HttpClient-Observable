@@ -10,28 +10,28 @@ import { Observable} from 'rxjs';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-public items=new Array<Todos>();
- //public items$: Observable<Todos[]>;
+//public items=new Array<Todos>();
+ public items$: Observable<Todos[]>;
 
 
   constructor (private servicioService: ServicioService) {}
 
   ngOnInit() {
-      this.servicioService.getData()
-         .subscribe((item:Todos[]) => 
-           this.items=item.map((i)=>{
-             let user=new Todos(i.userId,i.id,i.title,i.completed);
-             return user;
-           }));
-     //this.items$ = this.servicioService.getData();
+      // this.servicioService.getData()
+      //    .subscribe((item:Todos[]) => 
+      //      this.items=item.map((i)=>{
+      //        let user=new Todos(i.userId,i.id,i.title,i.completed);
+      //        return user;
+      //      }));
+     this.items$ = this.servicioService.getData();
  
   }
 
-  cambiaEstado(item:Todos) {
-  item.cambia();
-  console.log(item)
-  console.log(item.mays)
-  }
+  // cambiaEstado(item:Todos) {
+  // item.cambia();
+  // console.log(item)
+  // console.log(item.mays)
+  // }
 
   
 }
