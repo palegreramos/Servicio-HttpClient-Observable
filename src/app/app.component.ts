@@ -10,13 +10,13 @@ import { filter,map, Observable, from} from 'rxjs';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
- public items$: Observable<Todos[]>;
+ 
 
-  constructor (private servicioService: ServicioService) {}
+  constructor () {}
 
   ngOnInit() {
     
-     this.items$ = this.servicioService.getData();
+    
      
   }
   
