@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { of, map, filter } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { Todos } from '../todos';
 
@@ -24,8 +23,5 @@ export class ListadoComponent implements OnInit {
     if (item.completed) item.title=item.title.toUpperCase();
     else item.title=item.title.toLowerCase();
     console.log(item)
-    console.log(of(item))
-    
-    return of(item)
 }
 }

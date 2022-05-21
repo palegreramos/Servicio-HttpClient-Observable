@@ -1,7 +1,5 @@
-import { Component, ViewChild} from '@angular/core';
-import {Todos} from './todos';
-import { ServicioService } from './servicio.service';
-import { filter,map, Observable, from} from 'rxjs';
+import { Component} from '@angular/core';
+
 
 
 @Component({
