@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import {Todos} from './todos';
 import { ServicioService } from './servicio.service';
-import { Observable} from 'rxjs';
+import { Observable,of} from 'rxjs';
 
 
 @Component({
@@ -22,11 +22,13 @@ export class AppComponent  {
  
   }
 
-  cambiaEstado(item:Todos) {
+  cambiaEstado(item:Todos){
   item.completed=!item.completed;
   if (item.completed) item.title=item.title.toUpperCase();
   else item.title=item.title.toLowerCase();
   console.log(item)
+  console.log(of(item))
+  return of(item)
 
  }
 
