@@ -1,7 +1,7 @@
 import { Component, ViewChild} from '@angular/core';
 import {Todos} from './todos';
 import { ServicioService } from './servicio.service';
-import { Observable} from 'rxjs';
+import { filter, Observable, from} from 'rxjs';
 
 
 @Component({
@@ -19,7 +19,8 @@ export class AppComponent  {
   ngOnInit() {
     
      this.items$ = this.servicioService.getData();
- 
+  
+     
   }
 
   
@@ -27,4 +28,6 @@ export class AppComponent  {
  }
 
   
+
+
 

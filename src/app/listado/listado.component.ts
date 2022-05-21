@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { of } from 'rxjs';
+import { of, map, filter } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { Todos } from '../todos';
 
@@ -12,10 +12,13 @@ import { Todos } from '../todos';
 export class ListadoComponent implements OnInit {
 @Input() items$:Observable<Todos[]>;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
-  }
+    
+   }
+  
   cambiaEstado(item:Todos){
     item.completed=!item.completed;
     if (item.completed) item.title=item.title.toUpperCase();
