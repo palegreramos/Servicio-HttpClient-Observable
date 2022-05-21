@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../servicio.service';
 import { map } from 'rxjs/operators';
 import { Todos } from '../todos';
-import {FormBuilder, Validators} from '@angular/forms';
+
 
 
 @Component({
@@ -13,10 +13,9 @@ import {FormBuilder, Validators} from '@angular/forms';
 export class UsersComponent implements OnInit {
 items: Todos[]=[];
 valor:number;
-form;
-  constructor(private servicioService: ServicioService,private formBuilder: FormBuilder) { 
-    this.form = formBuilder.group({
-     num: ['',Validators.min(0),Validators.max(10)]})
+
+  constructor(private servicioService: ServicioService) { 
+  
   }
 
   ngOnInit() {
