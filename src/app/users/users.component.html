@@ -1,5 +1,14 @@
-
-<input type="number" [(ngModel)]="valor" (ngModelChange)="busca()">
+<form novalidate [formGroup]="form">
+<input type="number" 
+[(ngModel)]="valor" 
+(ngModelChange)="busca()" 
+class="form-control"
+formControlName="valor"
+name="valor">
+<div *ngIf="form.errors">
+  Error
+</div>
+</form>
 
 <pre>{{valor}}</pre>
 <pre>{{items | json}}</pre>
