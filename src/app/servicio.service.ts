@@ -14,6 +14,6 @@ export class ServicioService {
   getData(): Observable<Todos[]> {
     return this.http.get<Todos[]>('https://jsonplaceholder.typicode.com/todos');
   }
-  
+
 }
 
