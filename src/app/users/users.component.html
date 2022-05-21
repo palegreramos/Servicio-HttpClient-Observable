@@ -1,6 +1,3 @@
-<input type="number" [(ngModel)]="valor" (ngModelChange)="busca()"  min="0" max="10" class="form-control">
-<div [hidden]="valor.valid">
-Entre 0 y 10
-</div>
+<input type="number" [(ngModel)]="valor" (ngModelChange)="busca()"  min="0" max="10" >
 <pre>{{valor}}</pre>
 <pre>{{items | json}}</pre>
