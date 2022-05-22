@@ -1,6 +1,9 @@
-import { FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors } from '@angular/forms';
 
-export function passwordMatchValidator(controlName: string, matchingControlName: string) {
+export interface passwordMatchValidator { (control: AbstractControl): ValidationErrors | null }
+
+export class Validate{
+ static passwordMatchValidator(controlName: string, matchingControlName: string): ValidationErrors | null {
   return (formGroup: FormGroup) => {
     const control = formGroup.controls[controlName];
     const matchingControl = formGroup.controls[matchingControlName];
@@ -13,4 +16,4 @@ export function passwordMatchValidator(controlName: string, matchingControlName:
         matchingControl.setErrors(null);
     }
 }
-}
+}}
