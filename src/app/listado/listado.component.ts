@@ -20,8 +20,6 @@ export class ListadoComponent implements OnInit {
   
   cambiaEstado(item:Todos){
     item.completed=!item.completed;
-    if (item.completed) item.title=item.title.toUpperCase();
-    else item.title=item.title.toLowerCase();
     console.log(item)
 }
 }
