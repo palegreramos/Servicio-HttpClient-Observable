@@ -1,11 +1,12 @@
-import { FormGroup, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
 
 
 export class ValidateCustom {
  static passwordMatchValidator(controlName: string, matchingControlName: string): ValidationErrors | null {
-  return (formGroup: FormGroup) => {
-    const control = formGroup.controls[controlName];
-    const matchingControl = formGroup.controls[matchingControlName];
+  return (formGroup: AbstractControl):ValidationErrors|null => {
+    const control = formGroup.get(controlName);
+    const matchingControl = formGroup.get(matchingControlName);
+    console.log(control,matchingControl)
     if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
         return;
     }
