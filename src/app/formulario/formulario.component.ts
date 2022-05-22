@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -20,15 +20,17 @@ export class FormularioComponent implements OnInit {
     this.userForm=this.fb.group({
       nombre: ['', [Validators.required]],
       pass1: ['', [Validators.required,Validators.pattern('[0-9a-zA-Z]{2,4}')]],
-      pass2: ['',[Validators.required,this.matchValidator]]
+      pass2: ['',[Validators.required]]
     });
   }
   createUser() {
     if (this.userForm.valid) console.log("Usuario creado",this.userForm.value)
   }
-  matchValidator(control: AbstractControl) {
-    if (control.get('pass1').value==control.get('pass2').value)
-    control.get('pass2').setErrors({ NoPassswordMatch: true });
-  }
+  // matchValidator() {
+  //   // if (control.get['pass1'].value==control.get['pass2'].value)
+  //   // control.get('pass2').setErrors({ NoPassswordMatch: true });
+  //   console.log(this.userForm)
+
+  // }
   
 }
