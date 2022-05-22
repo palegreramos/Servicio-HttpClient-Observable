@@ -22,7 +22,7 @@ export class FormularioComponent implements OnInit {
     this.userForm=this.fb.group({
       nombre: ['', [Validators.required]],
       pass1: ['', [Validators.required,Validators.pattern('[0-9a-zA-Z]{2,4}')]],
-      pass2: ['',[Validators.required]]
+      pass2: ['',[Validators.required]] 
     }, { 
       validator: ValidateCustom.passwordMatchValidator('pass1', 'pass2')
     });
