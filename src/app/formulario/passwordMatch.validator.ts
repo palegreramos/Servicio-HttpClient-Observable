@@ -2,11 +2,10 @@ import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
 
 
 export class ValidateCustom {
- static passwordMatchValidator(controlName: string, matchingControlName: string): ValidationErrors | null {
-  return (formGroup: AbstractControl):ValidationErrors|null => {
+ static passwordMatchValidator(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
     const control = formGroup.get(controlName);
     const matchingControl = formGroup.get(matchingControlName);
-    console.log(control,matchingControl)
     if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
         return;
     }
