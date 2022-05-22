@@ -12,6 +12,6 @@
 <p>Form Control value: {{ userForm.value | json }}</p>
 <p>Form Control status: {{ userForm.status | json }}</p> 
 
-<p>Form Control nombre: {{ userForm.controls.nombre.errors | json }}</p> 
-<p>Form Control pass1: {{ userForm.controls.pass1.errors | json }}</p> 
-<p>Form Control pass2: {{ userForm.controls.pass2.errors | json }}</p> 
+<p>Form Control nombre errors: {{ userForm.controls.nombre.errors | json }}</p> 
+<p>Form Control pass1 errors: {{ userForm.controls.pass1.errors | json }}</p> 
+<p>Form Control pass2 errors: {{ userForm.controls.pass2.errors | json }}</p> 
