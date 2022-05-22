@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { passwordMatchValidator, Validate } from './passwordMatch.validator';
+import {  ValidateCustom } from './passwordMatch.validator';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class FormularioComponent implements OnInit {
       pass1: ['', [Validators.required,Validators.pattern('[0-9a-zA-Z]{2,4}')]],
       pass2: ['',[Validators.required]]
     }, { 
-      validator: Validate.passwordMatchValidator('pass1', 'pass2')
+      validator: ValidateCustom.passwordMatchValidator('pass1', 'pass2')
     });
   }
   createUser() {

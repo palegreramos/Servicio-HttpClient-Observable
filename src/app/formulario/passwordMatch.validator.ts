@@ -1,8 +1,7 @@
-import { AbstractControl, FormControl, FormGroup, ValidationErrors } from '@angular/forms';
+import { FormGroup, ValidationErrors } from '@angular/forms';
 
-export interface passwordMatchValidator { (control: AbstractControl): ValidationErrors | null }
 
-export class Validate{
+export class ValidateCustom {
  static passwordMatchValidator(controlName: string, matchingControlName: string): ValidationErrors | null {
   return (formGroup: FormGroup) => {
     const control = formGroup.controls[controlName];
@@ -11,7 +10,7 @@ export class Validate{
         return;
     }
     if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ passwordMatchValidator: true });
+        matchingControl.setErrors({passwordMatchValidator: true});
     } else {
         matchingControl.setErrors(null);
     }
