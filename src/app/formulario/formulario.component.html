@@ -1,17 +1,25 @@
 <div class="form-group">
   <form (ngSubmit)="createUser()" [formGroup]="userForm">
-    <div class="user-name">
-    <input name="nombre" type="text" placeholder="nombre" name="nombre" formControlName="nombre" required/>
+    <div class="user-name my-3">
+    <input class="form-control" name="nombre" type="text" placeholder="nombre" name="nombre" formControlName="nombre" required/>
     </div>
-    <input name="pass1" type="text" placeholder="contraseña" required name="pass1" formControlName="pass1" required />
-    <input name="pass2" type="text" placeholder="repite contraseña" required name="pass2" formControlName="pass2" required/>
-    <button type="submit" [disabled]="userForm.invalid ">Create</button>
+    <div class="mb-3">
+    <input class="form-control" name="pass1" type="text" placeholder="contraseña" required name="pass1" formControlName="pass1" required />
+  </div>
+  <div class="mb-3">
+    <input class="form-control" name="pass2" type="text" placeholder="repite contraseña" required name="pass2" formControlName="pass2" required/>
+  </div>
+    <button class="btn btn-success col-8 offset-2" type="submit" [disabled]="userForm.invalid ">Create</button>
   </form>
 
 </div>
-<p>Form Control value: {{ userForm.value | json }}</p>
-<p>Form Control status: {{ userForm.status | json }}</p> 
-
-<p>Form Control nombre errors: {{ userForm.controls.nombre.errors | json }}</p> 
-<p>Form Control pass1 errors: {{ userForm.controls.pass1.errors | json }}</p> 
-<p>Form Control pass2 errors: {{ userForm.controls.pass2.errors | json }}</p> 
+<div class="col-6 offset-3">
+  <table class="table table-hover">
+    <tbody>
+<tr><td>Form Control value:</td> <td>{{ userForm.value | json }}</td></tr>
+<tr><td>Form Control status:</td> <td>{{ userForm.status | json }}</td></tr>
+<tr><td>Form Control nombre errors:</td> <td>{{ userForm.controls.nombre.errors  | json }}</td></tr>
+<tr><td>Form Control pass1 errors:</td> <td>{{ userForm.controls.pass1.errors  | json }}</td></tr>
+<tr><td>Form Control pass2 errors:</td> <td>{{ userForm.controls.pass2.errors  | json }}</td></tr>
+</tbody></table>
+</div>
