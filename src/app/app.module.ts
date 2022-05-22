@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from "@angular/router";
 
 import { HttpClientModule } from '@angular/common/http'; 
@@ -18,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes) ],
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule.forRoot(routes) ],
   declarations: [ AppComponent, ListadoComponent, TablaComponent, UsersComponent, FormularioComponent ],
   providers: [ ServicioService ], 
   bootstrap:    [ AppComponent ]
