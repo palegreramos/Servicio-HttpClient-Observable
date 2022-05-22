@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {  AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { passwordMatchValidator } from './passwordMatch.validator';
 
 
 @Component({
@@ -8,7 +9,8 @@ import {  FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  public userForm!: FormGroup;
+  public userForm:FormGroup= new FormGroup({})
+ 
 
   constructor(private fb: FormBuilder) { 
     this.createForm();
@@ -21,16 +23,14 @@ export class FormularioComponent implements OnInit {
       nombre: ['', [Validators.required]],
       pass1: ['', [Validators.required,Validators.pattern('[0-9a-zA-Z]{2,4}')]],
       pass2: ['',[Validators.required]]
+    }, { 
+      validator: passwordMatchValidator('pass1', 'pass2')
     });
   }
   createUser() {
+    console.log(this.userForm)
     if (this.userForm.valid) console.log("Usuario creado",this.userForm.value)
   }
-  // matchValidator() {
-  //   // if (control.get['pass1'].value==control.get['pass2'].value)
-  //   // control.get('pass2').setErrors({ NoPassswordMatch: true });
-  //   console.log(this.userForm)
 
-  // }
   
 }

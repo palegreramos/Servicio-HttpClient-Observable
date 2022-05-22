@@ -5,9 +5,14 @@
     </div>
     <input name="pass1" type="text" placeholder="contraseña" required name="pass1" formControlName="pass1" required />
     <input name="pass2" type="text" placeholder="repite contraseña" required name="pass2" formControlName="pass2" required/>
-    <button type="submit" [disabled]="userForm.invalid">Create</button>
+    <button type="submit" >Create</button>
+    <!-- <button type="submit" [disabled]="userForm.invalid ">Create</button> -->
   </form>
 
 </div>
 <p>Form Control value: {{ userForm.value | json }}</p>
 <p>Form Control status: {{ userForm.status | json }}</p> 
+
+<p>Form Control nombre: {{ userForm.controls.nombre.errors | json }}</p> 
+<p>Form Control pass1: {{ userForm.controls.pass1.errors | json }}</p> 
+<p>Form Control pass2: {{ userForm.controls.pass2.errors | json }}</p> 
