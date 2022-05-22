@@ -4,8 +4,6 @@ import { map } from 'rxjs/operators';
 import { Todos } from '../todos';
 
 
-
-
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -15,9 +13,7 @@ export class UsersComponent implements OnInit {
 items: Todos[]=[];
 valor:number;
 
-  constructor(private servicioService: ServicioService) { 
-  
-  }
+  constructor(private servicioService: ServicioService) {   }
 
   ngOnInit() {
   }
