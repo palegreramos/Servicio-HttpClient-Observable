@@ -1,5 +1,13 @@
-<form>
-<input name="nombre" type="text">
-<input name="pass1" type="text">
-<input name="pass2" type="text">
-</form>
+<div class="form-group">
+  <form (ngSubmit)="createUser()" [formGroup]="userForm">
+    <div class="user-name">
+    <input name="nombre" type="text" placeholder="nombre" name="nombre" formControlName="nombre" required/>
+    </div>
+    <input name="pass1" type="text" placeholder="contraseña" required name="pass1" formControlName="pass1" required />
+    <input name="pass2" type="text" placeholder="repite contraseña" required name="pass1" formControlName="pass1" required/>
+    <button type="submit" [disabled]="userForm.invalid">Create</button>
+  </form>
+
+</div>
+<p>Form Control value: {{ userForm.value | json }}</p>
+<p>Form Control status: {{ userForm.status | json }}</p> 
