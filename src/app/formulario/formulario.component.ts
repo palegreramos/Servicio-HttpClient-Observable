@@ -9,7 +9,7 @@ import {  ValidateCustom } from './passwordMatch.validator';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  public userForm:FormGroup= new FormGroup({});
+  public userForm:FormGroup=new FormGroup({});
  
 
   constructor(private fb: FormBuilder) { 
@@ -22,9 +22,10 @@ export class FormularioComponent implements OnInit {
     this.userForm=this.fb.group({
       nombre: ['', [Validators.required]],
       pass1: ['', [Validators.required,Validators.pattern('[0-9a-zA-Z]{2,4}')]],
-      pass2: ['',[Validators.required]] 
-    }, { 
-      validator: ValidateCustom.passwordMatchValidator('pass1', 'pass2')
+      pass2: ['',[Validators.required]], 
+    },
+    {
+      validator: [ValidateCustom.passwordMatchValidator('pass1', 'pass2')]
     });
   }
   createUser() {

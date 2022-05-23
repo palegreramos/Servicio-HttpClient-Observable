@@ -1,4 +1,4 @@
-import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 
 export class ValidateCustom {
@@ -10,7 +10,7 @@ export class ValidateCustom {
         return null;
     }
     if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({passwordMatchValidator: true});
+        matchingControl.setErrors({passwordMatchValidator: 'contraseñas no coinciden'});
     } else {
         matchingControl.setErrors(null);
     }
