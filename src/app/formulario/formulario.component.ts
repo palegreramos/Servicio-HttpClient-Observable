@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import {  AbstractControl, FormBuilder, FormControl, FormGroup,  Validators } from '@angular/forms';
 import {  ValidateCustom } from './passwordMatch.validator';
 
 
@@ -9,7 +9,7 @@ import {  ValidateCustom } from './passwordMatch.validator';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  public userForm:FormGroup= new FormGroup({})
+  public userForm:FormGroup= new FormGroup({});
  
 
   constructor(private fb: FormBuilder) { 
