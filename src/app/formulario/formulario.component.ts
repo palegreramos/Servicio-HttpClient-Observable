@@ -11,7 +11,7 @@ import {  ValidateCustom } from './passwordMatch.validator';
 export class FormularioComponent implements OnInit {
   // public userForm:FormGroup=new FormGroup({});
  public userForm:FormGroup;
-
+  creado:boolean=false;
   constructor(private fb: FormBuilder) { 
     this.createForm();
   }
@@ -30,7 +30,10 @@ export class FormularioComponent implements OnInit {
   }
   createUser() {
     console.log(this.userForm)
-    if (this.userForm.valid) console.log("Usuario creado",this.userForm.value)
+    if (this.userForm.valid) {
+      console.log("Usuario creado",this.userForm.value);
+      this.creado=true;
+    }
   }
 
   
