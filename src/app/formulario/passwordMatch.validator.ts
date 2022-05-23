@@ -11,9 +11,11 @@ export class ValidateCustom {
     // }
     if (control.value !== matchingControl.value) {
         matchingControl.setErrors({passwordMatchValidator: 'contraseñas no coinciden'});
+        return {passwordMatchValidator: 'contraseñas no coinciden'};
     } else {
         matchingControl.setErrors(null);
+        return null;
     }
-    return null;
+    
 }
 }}

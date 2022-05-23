@@ -9,8 +9,8 @@ import {  ValidateCustom } from './passwordMatch.validator';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  public userForm:FormGroup=new FormGroup({});
- 
+  // public userForm:FormGroup=new FormGroup({});
+ public userForm:FormGroup;
 
   constructor(private fb: FormBuilder) { 
     this.createForm();
@@ -25,7 +25,7 @@ export class FormularioComponent implements OnInit {
       pass2: ['',[Validators.required]], 
     },
     {
-      validator: [ValidateCustom.passwordMatchValidator('pass1', 'pass2')]
+      validators: [ValidateCustom.passwordMatchValidator('pass1', 'pass2')]
     });
   }
   createUser() {
