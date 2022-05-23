@@ -13,8 +13,8 @@
   </form>
 
 </div>
-<div class="col-6 offset-3">
-  <table class="table table-hover">
+<div class="col-6 offset-3 text-center mt-2">
+  <table class="table table-hover" *ngIf="!creado; else datos">
     <tbody>
 <tr><td>Form Control value:</td> <td>{{ userForm.value | json }}</td></tr>
 <tr><td>Form Control status:</td> <td>{{ userForm.status | json }}</td></tr>
@@ -22,4 +22,5 @@
 <tr><td>Form Control pass1 errors:</td> <td>{{ userForm.controls.pass1.errors  | json }}</td></tr>
 <tr><td>Form Control pass2 errors:</td> <td>{{ userForm.controls.pass2.errors  | json }}</td></tr>
 </tbody></table>
+<ng-template #datos>{{userForm.value | json}}</ng-template>
 </div>
