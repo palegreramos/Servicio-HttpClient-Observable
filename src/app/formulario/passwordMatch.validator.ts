@@ -10,8 +10,9 @@ export class ValidateCustom {
     //     return null;
     // }
     if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({passwordMatchValidator: 'contraseñas no coinciden'});
-        return {passwordMatchValidator: 'contraseñas no coinciden'};
+        let msgerror:ValidationErrors={passwordMatchValidator: 'contraseñas no coinciden'};
+        matchingControl.setErrors(msgerror);
+        return msgerror;
     } else {
         matchingControl.setErrors(null);
         return null;
