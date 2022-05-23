@@ -25,7 +25,7 @@ export class FormularioComponent implements OnInit {
       pass2: ['',[Validators.required]], 
     },
     {
-      validators: [ValidateCustom.passwordMatchValidator('pass1', 'pass2')]
+      validators: ValidateCustom.passwordMatchValidator('pass1', 'pass2')
     });
   }
   createUser() {
